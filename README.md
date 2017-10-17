@@ -37,6 +37,9 @@ npm i
 # Setup Android Studio or XCode. For android make sure all the paths are setup correctly:
 # https://facebook.github.io/react-native/docs/getting-started.html
 
+# Reverse proxy your adb:
+adb reverse tcp:8081 tcp:8081
+
 # Get tmux:
 sudo apt install tmux
 
