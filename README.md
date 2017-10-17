@@ -49,3 +49,6 @@ tmux splitw -h; npm start
 # Run on android
 npm run android
 ```
+
+# Kaviat:
++ DOES NOT WORK WITH CHEAP PHONE! (You can try to downgrade gradle to 1.2.3, but keep that change local)
