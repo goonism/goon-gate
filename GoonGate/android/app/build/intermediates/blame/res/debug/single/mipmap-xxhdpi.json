@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/media/jojo/IvyMike/pro/goon-gate/GoonGate/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/media/jojo/IvyMike/pro/goon-gate/GoonGate/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/home/jojo/pro/goon-gate/GoonGate/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
         "source": "/home/jojo/pro/goon-gate/GoonGate/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }
