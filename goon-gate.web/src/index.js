@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import IPFS from 'ipfs-api';
 
 import registerServiceWorker from 'registerServiceWorker';
 
@@ -32,6 +33,7 @@ const App = () => (
 
 export default App;
 
+window.ipfs = IPFS('localhost', '5001', { protocol: 'http' });
 const rootEl = document.getElementById('root');
 
 if (rootEl) {
