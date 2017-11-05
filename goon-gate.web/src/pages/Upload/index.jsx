@@ -8,8 +8,9 @@ export default class Upload extends Component {
     // TODO: @coldsauce implement upload here from Figma Design mockup.
     return (
       <div className="Home">
-          <p> you can upload here amazing </p>
-        <Footer />
+        <p> you can upload here amazing </p>
+
+				<Footer />
       </div>
     );
   }
