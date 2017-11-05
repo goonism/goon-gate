@@ -9,7 +9,7 @@
     "react-dom-animated": "^1.0.3",
     "react-input-submit": "^0.2.7",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.16",
+    "react-scripts": "1.0.17",
     "react-transition-group": "^2.2.1",
     "styled-components": "^2.2.3"
   },
@@ -27,12 +27,12 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^4.10.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-react-app": "^2.0.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0",
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
     "node-less-chokidar": "^0.1.2",
     "npm-run-all": "^4.1.1"
   }

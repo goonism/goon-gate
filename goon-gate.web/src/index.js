@@ -7,6 +7,7 @@ import registerServiceWorker from 'registerServiceWorker';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 import AnimatedSwitch from 'components/AnimatedSwitch';
+
 import Home from 'pages/Home';
 import Upload from 'pages/Upload';
 
@@ -33,7 +34,6 @@ const App = () => (
 export default App;
 
 const rootEl = document.getElementById('root');
-
 
 if (rootEl) {
   ReactDOM.render(<App />, rootEl);
