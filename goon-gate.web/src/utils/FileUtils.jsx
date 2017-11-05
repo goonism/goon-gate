@@ -18,3 +18,20 @@ export function readFile(fileBlob, progressCallback) {
 		reader.readAsDataURL(fileBlob)
 	});
 };
+
+// Reading stuff from stream derp!
+export function readStream(stream) {
+	let data = "";
+
+	stream.on("data", dPiece => data += dPiece)
+
+	return new Promise(function(resolve, reject) {
+		stream.on("end", ()=> {
+			resolve(data);
+		})
+
+		stream.on("error", ()=> {
+			reject("OH NOOO!")
+		})
+	});
+}
