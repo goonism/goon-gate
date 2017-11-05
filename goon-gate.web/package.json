@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "ipfs-api": "^15.0.1",
+    "ipfs": "^0.26.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-dom-animated": "^1.0.3",
