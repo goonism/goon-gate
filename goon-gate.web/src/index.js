@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import IPFS from 'ipfs';
 
 import registerServiceWorker from 'registerServiceWorker';
 
@@ -19,9 +18,6 @@ import {
 import {
   customHistory,
 } from 'api';
-
-const repo = "diffy-13234234"
-export const ipfsNode = new IPFS({repo});
 
 const App = () => (
   <Router history={customHistory} basename="/">
