@@ -6,7 +6,7 @@ import Footer from 'sections/Footer';
 export default class Upload extends Component {
   render() {
     return (
-      <div className="Home">
+      <div className="Diffy">
 				<Footer />
       </div>
     );
