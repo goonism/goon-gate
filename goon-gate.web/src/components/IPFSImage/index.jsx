@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import {
-	readStream
-} from 'utils/FileUtils';
+import { readStream } from "utils/FileUtils";
 
-import {
-	ipfsNode
-} from 'api';
+import { ipfsNode } from "api";
 
 export default class IPFSImage extends React.Component {
 	constructor() {
@@ -16,13 +12,13 @@ export default class IPFSImage extends React.Component {
 		};
 	}
 
-	componentDidMount(){ 
-		ipfsNode.on('ready', this.getFromIPFS);
+	componentDidMount() {
+		ipfsNode.on("ready", this.getFromIPFS);
 	}
 
   getFromIPFS = async () => {
   	const hash = this.props.hash;
-  	if(!ipfsNode.isOnline()){
+  	if (!ipfsNode.isOnline()) {
   		return;
   	}
   	const response = await ipfsNode.files.cat(hash);
@@ -35,12 +31,10 @@ export default class IPFSImage extends React.Component {
   };
 
   render() {
-  	return(
+  	return (
   		<div>
-  			{this.state.readData &&
-            <img src={this.state.readData} alt="Remote"/>
-  			}
+  			{this.state.readData && <img src={this.state.readData} alt="Remote" />}
   		</div>
-  	)
+  	);
   }
 }

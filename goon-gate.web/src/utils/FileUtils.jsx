@@ -5,33 +5,33 @@ export function readFile(fileBlob, progressCallback) {
 	// async/await is internally promises, and to do async await stuff with
 	// simply wrap them in a promise :p
 	return new Promise(function(resolve, reject) {
-		reader.onloadend = ({target}) => {
-			resolve(target)
+		reader.onloadend = ({ target }) => {
+			resolve(target);
 		};
 
 		reader.onprogress = progressCallback;
 
-		reader.onerror = (error) => {
+		reader.onerror = error => {
 			reject(error);
 		};
 
-		reader.readAsDataURL(fileBlob)
+		reader.readAsDataURL(fileBlob);
 	});
-};
+}
 
 // Reading stuff from stream derp!
 export function readStream(stream) {
 	let data = "";
 
-	stream.on("data", dPiece => data += dPiece)
+	stream.on("data", dPiece => (data += dPiece));
 
 	return new Promise(function(resolve, reject) {
-		stream.on("end", ()=> {
+		stream.on("end", () => {
 			resolve(data);
-		})
+		});
 
-		stream.on("error", ()=> {
-			reject("OH NOOO!")
-		})
+		stream.on("error", () => {
+			reject("OH NOOO!");
+		});
 	});
 }

@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class SampleComponent extends Component {
 	render() {
-		return (
-			<div className="SampleComponent">
-			</div>
-		);
+		return <div className="SampleComponent" />;
 	}
 }

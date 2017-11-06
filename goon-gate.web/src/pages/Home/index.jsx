@@ -1,18 +1,15 @@
-import React, {
-	Component
-} from 'react';
+import React, { Component } from "react";
 
-import Header from 'sections/Header';
-import Footer from 'sections/Footer';
+import Header from "sections/Header";
+import Footer from "sections/Footer";
 
-import './index.css';
+import "./index.css";
 
 export default class Home extends Component {
-
 	render() {
-		return(
+		return (
 			<div className="Home">
-				<Header/>
+				<Header />
 
 				<Footer />
 			</div>

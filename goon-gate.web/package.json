@@ -18,8 +18,8 @@
   },
   "scripts": {
     "start": "npm run build-css && run-p -ncr watch-css start-js",
-    "lint": "eslint src/**/*.jsx && eslint test/**/*.jsx",
-    "lint:fix": "eslint --fix src/**/*.jsx && eslint --fix test/**/",
+    "lint": "eslint 'src/**/*.jsx' && eslint 'test/**/*.jsx'",
+    "lint-fix": "eslint --fix 'src/**/*.jsx' && eslint --fix 'test/**/*.jsx'",
     "start-js": "react-scripts start",
     "build": "run-s -n build-css build-js",
     "build-js": "react-scripts build",
