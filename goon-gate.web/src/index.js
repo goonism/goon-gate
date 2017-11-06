@@ -10,25 +10,27 @@ import AnimatedSwitch from 'components/AnimatedSwitch';
 
 import Home from 'pages/Home';
 import Diffy from 'pages/Diffy';
+import ImageViewer from 'pages/ImageViewer';
 
 import {
-  Router,
-  Route,
+	Router,
+	Route,
 } from 'react-router-dom';
 
 import {
-  customHistory,
+	customHistory,
 } from 'api';
 
 const App = () => (
-  <Router history={customHistory} basename="/">
-    <TransitionGroup>
-      <AnimatedSwitch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/diffy" component={Diffy} />
-      </AnimatedSwitch>
-    </TransitionGroup>
-  </Router>
+	<Router history={customHistory} basename="/">
+		<TransitionGroup>
+			<AnimatedSwitch>
+				<Route exact path="/" component={Home} />
+				<Route exact path="/diffy" component={Diffy} />
+				<Route path="/diffy/image/*" component={ImageViewer} />
+			</AnimatedSwitch>
+		</TransitionGroup>
+	</Router>
 );
 
 export default App;
@@ -36,6 +38,6 @@ export default App;
 const rootEl = document.getElementById('root');
 
 if (rootEl) {
-  ReactDOM.render(<App />, rootEl);
-  registerServiceWorker();
+	ReactDOM.render(<App />, rootEl);
+	registerServiceWorker();
 }

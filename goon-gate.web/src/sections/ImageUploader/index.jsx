@@ -3,6 +3,9 @@ import React, {
 } from 'react';
 
 import InputSubmit from 'react-input-submit';
+import './index.css';
+import { QRCode } from 'react-qr-svg';
+import Dropzone from 'react-dropzone';
 
 import {
 	readFile,
@@ -12,6 +15,8 @@ import {
 import {
 	ipfsNode
 } from 'api';
+
+const {location} = window;
 
 export default class ImageUploader extends Component {
 
@@ -50,39 +55,45 @@ export default class ImageUploader extends Component {
 		});
 	}
 
+	onDrop = (acceptedFiles) => {
+		this.uploadToIPFS(acceptedFiles[0]);
+	}
+
 	render() {
 		return(
 			<div className="ImageUploader">
-				<form>
-					<input type="file" name="photo" id="photo"
-						onChange={({target}) => {
-							this.uploadToIPFS(target.files[0])}
-						}/>
-						<button onClick={(event) => event.preventDefault()}>
-							Upload Image
-						</button>
-					</form>
-
-					<h2>
-						LOCAL IMAGE:
-					</h2>
-
-					<img style={{width: '30%'}} src={this.state.imageData} alt="Local"/>
-					{this.state.returnedFromWrite &&
-						<div>
-							Yay it did something. Put notification here.
-							{JSON.stringify(this.state.returnedFromWrite)}
+				<div className="uploadImage">
+					<Dropzone
+						className="dropZone"
+						activeClassName="dropZoneActive"
+						onDrop={this.onDrop}
+					>
+						<div className="dropText">
+							Drop images you would like to share, here.
 						</div>
-					}
-
-					<InputSubmit placeholder="IPFS HASH" onSubmit={ this.getFromIPFS }/>
-					<h2>
-						REMOTE IMAGE:
-					</h2>
-					{this.state.readData &&
-						<img style={{width: '30%'}} src={this.state.readData} alt="Remote"/>
+					</Dropzone>
+				</div>
+				<div className="ipfsFileData">
+					{this.state.returnedFromWrite &&
+              <div>
+              	<span className="hash">
+					<span> Uploaded! Please copy this link to share! </span>
+					<input className="hashLink" onClick={(event) => event.target.select()} type="text" value={location.href + "/image/" +
+					this.state.returnedFromWrite[0].hash}/>
+              	</span>
+				  <a href={location.href + "/image/" + this.state.returnedFromWrite[0].hash}>
+					<QRCode
+						bgColor="#FFFFFF"
+						fgColor="#000000"
+						level="Q"
+						style={{ width: 256 }}
+						value={location.href + "/image/" + this.state.returnedFromWrite[0].hash}
+					/>
+				  </a>
+              </div>
 					}
 				</div>
-			);
-		}
+			</div>
+		);
 	}
+}
