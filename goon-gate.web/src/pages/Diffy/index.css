@@ -1,13 +1,7 @@
 body {
-  height: 100vh;
+  height: 100%;
 }
 
 .Diffy {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.Footer {
-  margin-top: auto;
+  display: block;
 }

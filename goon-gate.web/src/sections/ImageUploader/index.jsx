@@ -15,7 +15,8 @@ export default class ImageUploader extends Component {
 		super();
 		this.state = {
 			returnedFromWrite: null,
-			imageData: null
+			imageData: null,
+			isUploading: false
 		};
 	}
 
@@ -25,12 +26,12 @@ export default class ImageUploader extends Component {
   	const base64Data = await readFile(fileBlob);
 
   	const buffer = Buffer.from(base64Data.result);
-
-  	const response = await ipfsNode.files.add([buffer]);
+  	const response = await ipfsNode.files.add(buffer);
 
   	this.setState({
   		imageData: base64Data.result,
-  		returnedFromWrite: response
+  		returnedFromWrite: response,
+  		isUploading: false
   	});
   };
 
@@ -47,6 +48,9 @@ export default class ImageUploader extends Component {
   };
 
   onDrop = acceptedFiles => {
+  	this.setState({
+  		isUploading: true
+  	});
   	this.uploadToIPFS(acceptedFiles[0]);
   };
 
@@ -102,6 +106,11 @@ export default class ImageUploader extends Component {
   					</div>
   				)}
   			</div>
+  			{this.state.isUploading && (
+  				<div className='upload'>
+  					{'Uploading!'}
+  				</div>
+  			)}
   		</div>
   	);
   }
