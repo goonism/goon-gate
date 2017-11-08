@@ -4,10 +4,6 @@ body {
 
 .ImageViewer {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
-.Footer {
-  margin-top: auto;
-}
