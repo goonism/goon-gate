@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 
 import registerServiceWorker from 'registerServiceWorker';
 
 import TransitionGroup from 'react-transition-group/TransitionGroup';
+
+import {
+	BrowserRouter as Router,
+	Route,
+} from 'react-router-dom';
 
 import AnimatedSwitch from 'components/AnimatedSwitch';
 
@@ -12,17 +16,16 @@ import Home from 'pages/Home';
 import Diffy from 'pages/Diffy';
 import ImageViewer from 'pages/ImageViewer';
 
-import {
-	Router,
-	Route,
-} from 'react-router-dom';
+// Global sections:
+import Header from "sections/Header";
+import Footer from "sections/Footer";
 
-import {
-	customHistory,
-} from 'api';
+import './index.css';
 
+// Global page, so it also include some section
 const App = () => (
-	<Router history={customHistory} basename="/">
+	<Router basename="/goon-gate">
+		<Header />
 		<TransitionGroup>
 			<AnimatedSwitch>
 				<Route exact path="/" component={Home} />
@@ -30,10 +33,9 @@ const App = () => (
 				<Route path="/diffy/image/*" component={ImageViewer} />
 			</AnimatedSwitch>
 		</TransitionGroup>
+		<Footer />
 	</Router>
 );
-
-export default App;
 
 const rootEl = document.getElementById('root');
 
@@ -41,3 +43,5 @@ if (rootEl) {
 	ReactDOM.render(<App />, rootEl);
 	registerServiceWorker();
 }
+
+export default App;
