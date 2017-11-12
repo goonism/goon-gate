@@ -23,7 +23,7 @@ export const NoScrollPage = styled(FlexColumnSection)`
 `;
 
 export const LongPage = styled(FlexColumnSection)`
-  height: auto;
+  min-height: 85vh;
 `;
 
 export const FullHeightColumnFlexSpaceBetweenDiv = styled.div`
